@@ -2,13 +2,13 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { SyncModule } from './sync/sync.module';
+import { DayModule } from './day/day.module';
 
 const environment = process.env.NODE_ENV || 'development';
 
 @Module({
   imports: [
-    SyncModule,
+    DayModule,
 
     ConfigModule.forRoot({
       envFilePath: `.env.${environment}`,
